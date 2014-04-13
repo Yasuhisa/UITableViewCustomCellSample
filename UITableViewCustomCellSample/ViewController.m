@@ -168,6 +168,8 @@ static NSInteger const ViewControllerTableSecsion   = 2;
         }
     }
     
+    cell.labelCellNumber.text = [NSString stringWithFormat:@"セル番号：%d", indexPath.row + 1];
+    
     return cell;
 }
 
