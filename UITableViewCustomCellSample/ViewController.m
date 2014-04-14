@@ -161,14 +161,14 @@ static NSInteger const ViewControllerTableSecsion   = 2;
                 break;
             case 1: // Android
                 cell.imageThumb.image = [UIImage imageNamed:@"android-200x200"];
-                cell.labelDeviceName.text = self.dataSourceiPhone[indexPath.row];
+                cell.labelDeviceName.text = self.dataSourceAndroid[indexPath.row];
                 break;
             default:
                 break;
         }
     }
     
-    cell.labelCellNumber.text = [NSString stringWithFormat:@"セル番号：%d", indexPath.row + 1];
+    cell.labelCellNumber.text = [NSString stringWithFormat:@"セル番号：%ld", (long)indexPath.row + 1];
     
     return cell;
 }
