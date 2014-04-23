@@ -60,9 +60,7 @@ static NSInteger const ViewControllerTableSecsion   = 2;
     self.dataSourceAndroid = @[@"Nexus", @"Galaxy", @"Xperia"];
     
     // カスタマイズしたセルをテーブルビューにセット
-    UINib *nib = [UINib nibWithNibName:TableViewCustomCellIdentifier bundle:nil];
-    [self.tableView registerNib:nib forCellReuseIdentifier:@"Cell"];
-    [self.searchDisplayController.searchResultsTableView registerNib:nib forCellReuseIdentifier:@"Cell"];
+    [self.searchDisplayController.searchResultsTableView registerNib:[UINib nibWithNibName:TableViewCustomCellIdentifier bundle:nil] forCellReuseIdentifier:@"Cell"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -134,8 +132,7 @@ static NSInteger const ViewControllerTableSecsion   = 2;
  */
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    CustomTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    CustomTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
     
     // ここのsearchDisplayControllerはStoryboardで紐付けされたsearchBarに自動で紐づけられています
     if (tableView == self.searchDisplayController.searchResultsTableView) {
